@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Allyra, agence de communication dans la Somme</title>
+<meta name="description" content="Allyra, agence de communication dans la Somme : stratégie de marque, identité visuelle, réseaux sociaux, conception et impression de supports de communication.">
+<link rel="canonical" href="https://allyra-agence.com/">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Mise en page : ouverture sombre et colorée, puis corps clair et structuré ; la couleur vit dans les cartes d'expertise et le bloc contact. */
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F4F2F6;
+    --ink: #1D1A2E;
+    --ink-2: #28243C;
+    --text: #2E2B3D;
+    --muted: #5F5B6E;
+    --line: #E4E1EA;
+    --pink: #E0457B;
+    --pink-text: #C22E62;
+    --yellow: #A9C6A2;
+    --mint: #D8E6D4;
+    --orange: #F5C9D8;
+    --on-ink: #F4F2F6;
+    --on-ink-muted: #B8B4C6;
+    --display: "Syne", "Helvetica Neue", Arial, sans-serif;
+    --body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --max: 1180px;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); font-size: 18px; line-height: 1.65; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; color: var(--ink); line-height: 1.12; text-wrap: balance; }
+  .wrap {
+    max-width: var(--max); margin: 0 auto;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
+  }
+  section { padding-block: 100px; }
+  .label {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px;
+    font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--pink-text);
+  }
+  .label::before { content: ""; width: 24px; height: 2px; background: currentColor; }
+  .head { display: grid; grid-template-columns: 6fr 5fr; gap: 48px; align-items: end; margin-bottom: 56px; }
+  .head h2 { font-size: clamp(32px, 4vw, 52px); }
+  .head p { color: var(--muted); font-size: 19px; }
+  :focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 999px;
+    font-weight: 700; font-size: 16px; text-decoration: none; border: 2px solid transparent; cursor: pointer;
+    background: var(--yellow); color: var(--ink); transition: transform .2s, box-shadow .2s;
+  }
+  .btn:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: 5px 5px 0 var(--pink); }
+  .btn.ghost { background: transparent; color: var(--on-ink); border-color: var(--on-ink); }
+  .btn.ghost:hover { box-shadow: 5px 5px 0 var(--yellow); }
+
+  /* En-tête et ouverture */
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--ink); }
+  header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--ink); border-bottom: 1px solid #34304A; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 76px; }
+  .logo { line-height: 0; }
+  .logo img { height: 36px; width: auto; }
+  .links { display: flex; gap: 30px; font-weight: 600; font-size: 16px; color: var(--on-ink); }
+  .links a { text-decoration: none; }
+  .links a:hover { color: var(--yellow); }
+  header .btn { padding: 11px 20px; font-size: 15px; }
+  .burger { display: none; background: none; border: 1px solid #45405C; border-radius: 8px; padding: 8px 12px; font-size: 20px; color: var(--on-ink); cursor: pointer; }
+
+  .hero { background: var(--ink); color: var(--on-ink); padding-block: 96px 170px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+  .hero h1 { color: #fff; font-size: clamp(40px, 6vw, 78px); max-width: 880px; }
+  .hero h1 .y { color: var(--yellow); }
+  .hero h1 .p { color: var(--pink); }
+  .hero .lead { color: var(--on-ink-muted); font-size: 21px; max-width: 620px; margin-top: 28px; }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+  .hero .label { color: var(--yellow); }
+  .proof { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 48px; padding-top: 28px; border-top: 1px solid #34304A; font-size: 16px; color: var(--on-ink-muted); }
+  .proof span::before { content: "✓"; color: var(--mint); font-weight: 700; margin-right: 8px; }
+
+  .sticker { position: relative; width: 190px; height: 190px; display: grid; place-items: center; }
+  .sticker .ring { position: absolute; inset: 0; animation: spin 18s linear infinite; }
+  .sticker text { font-family: var(--display); font-weight: 700; font-size: 13.5px; letter-spacing: .2em; fill: var(--on-ink); }
+  .sticker-ll { position: relative; width: 38px; height: 38px; fill: none; stroke: var(--pink); stroke-width: 20; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Expertises */
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .service { border-radius: 22px; padding: 36px; display: flex; flex-direction: column; gap: 14px; color: var(--ink); transition: transform .3s; }
+  .service:hover { transform: translateY(-4px); }
+  .service:nth-child(1) { background: var(--yellow); }
+  .service:nth-child(2) { background: var(--pink); }
+  .service:nth-child(3) { background: var(--mint); }
+  .service:nth-child(4) { background: var(--orange); }
+  .service h3 { font-size: clamp(26px, 2.6vw, 34px); }
+  .service p { font-size: 17px; max-width: 460px; }
+  .service ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 10px; }
+  .service li { border: 1.5px solid var(--ink); border-radius: 999px; padding: 5px 14px; font-size: 14px; font-weight: 600; }
+
+  /* Publics */
+  .audiences-band { background: var(--surface); }
+  .audiences { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .aud { background: var(--bg); border-radius: 18px; padding: 32px; border: 1px solid var(--line); }
+  .aud .dot { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 18px; }
+  .aud .dot svg { width: 24px; height: 24px; fill: none; stroke: var(--ink); stroke-width: 22; }
+  .aud h3 { font-size: 22px; margin-bottom: 10px; }
+  .aud p { color: var(--muted); font-size: 17px; }
+
+  /* Méthode */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: step; }
+  .step { counter-increment: step; border-top: 3px solid var(--ink); padding-top: 22px; }
+  .step::before { content: counter(step, decimal-leading-zero); font-family: var(--display); font-weight: 700; font-size: 44px; color: var(--pink); display: block; line-height: 1; margin-bottom: 14px; }
+  .step h3 { font-size: 22px; margin-bottom: 8px; }
+  .step p { font-size: 17px; color: var(--muted); }
+
+  /* Références */
+  .work { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .case { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+  .case .visual { aspect-ratio: 16 / 9; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 26px; color: #fff; }
+  .case:nth-child(1) .visual { background: linear-gradient(135deg, #1D1A2E, var(--pink)); }
+  .case:nth-child(2) .visual { background: linear-gradient(135deg, var(--orange), var(--yellow)); color: var(--ink); }
+  .case:nth-child(3) .visual { background: linear-gradient(135deg, var(--mint), #1D1A2E); }
+  .case:nth-child(4) .visual { background: linear-gradient(135deg, var(--pink), var(--orange)); }
+  .case .body { padding: 22px 26px 26px; display: grid; gap: 6px; }
+  .case .tag { font-size: 14px; font-weight: 700; color: var(--pink-text); letter-spacing: .06em; text-transform: uppercase; }
+  .case h3 { font-size: 21px; }
+  .case p { font-size: 16.5px; color: var(--muted); }
+  .note { font-size: 14px; color: var(--muted); margin-top: 18px; }
+
+  /* Chiffres */
+  .figures-band { background: var(--ink); padding-block: 72px; }
+  .figures { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .figure { display: grid; justify-items: center; align-content: start; }
+  .figure .v { font-family: var(--display); font-weight: 700; font-size: clamp(42px, 5vw, 64px); color: var(--yellow); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+  .figure .l { color: var(--on-ink); margin-top: 10px; font-size: 17px; }
+  .figures-band .note { color: var(--on-ink-muted); }
+
+  /* Agence */
+  .about { display: grid; grid-template-columns: 4fr 7fr; gap: 72px; align-items: stretch; }
+  .portrait { position: relative; display: flex; }
+  .portrait img { border-radius: 24px; width: 100%; height: 100%; min-height: 420px; object-fit: cover; object-position: center top; box-shadow: 12px 12px 0 var(--pink); background: var(--surface); }
+  .portrait figcaption {
+    position: absolute; left: -12px; bottom: 24px; background: var(--yellow); color: var(--ink);
+    font-family: var(--display); font-weight: 700; padding: 10px 20px; border-radius: 999px; font-size: 17px;
+    transform: rotate(-6deg); box-shadow: 4px 4px 0 var(--ink);
+  }
+  .about h2 { font-size: clamp(32px, 4vw, 52px); margin-bottom: 20px; }
+  .about h2 em { font-style: normal; color: var(--pink); }
+  .about p { color: var(--muted); }
+  .about p + p { margin-top: 14px; }
+  .commitments { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 32px; margin-top: 36px; }
+  .commitments div { border-left: 3px solid var(--yellow); padding-left: 16px; }
+  .commitments h3 { font-size: 18px; margin-bottom: 4px; }
+  .commitments p { font-size: 16px; }
+
+  .quote { background: var(--surface); padding-block: 80px; }
+  .reviews-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
+  .reviews-head h2 { font-size: clamp(32px, 4vw, 52px); }
+  .score { display: flex; align-items: center; gap: 14px; }
+  .score .big { font-family: var(--display); font-weight: 700; font-size: 48px; line-height: 1; color: var(--ink); }
+  .score .stars { color: var(--pink); font-size: 22px; letter-spacing: 2px;  }
+  .score small { display: block; color: var(--muted); font-size: 15px; }
+  .reviews { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: auto auto; gap: 20px; }
+  .review:first-child { grid-row: span 2; }
+  .review:nth-child(4) { grid-column: span 2; }
+  .review { background: var(--bg); border: 1px solid var(--line); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .review .stars { color: var(--pink); font-size: 18px; letter-spacing: 2px;  }
+  .review blockquote { font-size: 17.5px; color: var(--ink); line-height: 1.55; }
+  .review blockquote::before { content: "“"; display: block; font-family: var(--display); color: var(--pink); font-size: 56px; line-height: .5; margin-bottom: 6px; }
+  .review footer { margin-top: auto; padding: 14px 0 0; border-top: 1px solid var(--line); background: none; color: var(--muted); font-size: 15px; display: grid; gap: 2px; }
+  .review footer strong { color: var(--ink); font-family: var(--display); font-size: 16px; }
+  .reviews-note { margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; color: var(--muted); font-size: 15px; }
+  .reviews-note a { color: var(--ink); font-weight: 700; }
+
+  /* Contact */
+  .contact-card { display: grid; grid-template-columns: 4fr 7fr; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: var(--bg); }
+  .contact-side { background: var(--ink); color: var(--on-ink); padding: 40px; display: flex; flex-direction: column; gap: 28px; }
+  .contact-side h3 { color: #fff; font-size: 24px; }
+  .choices { display: grid; gap: 12px; }
+  .choice {
+    display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; text-align: left; width: 100%;
+    padding: 16px 18px; border-radius: 16px; border: 2px solid #45405C; background: transparent; color: var(--on-ink);
+    font: inherit; cursor: pointer; transition: border-color .2s, background .2s;
+  }
+  .choice .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 20px; background: #34304A; }
+  .choice strong { display: block; color: #fff; font-family: var(--display); font-size: 18px; }
+  .choice small { color: var(--on-ink-muted); font-size: 14.5px; }
+  .choice:hover { border-color: var(--on-ink-muted); }
+  .choice[aria-selected="true"] { border-color: var(--yellow); background: #28243C; }
+  .choice[aria-selected="true"] .ico { background: var(--yellow); }
+  .contact-lines { margin-top: auto; display: grid; gap: 8px; padding-top: 24px; border-top: 1px solid #34304A; font-size: 16px; }
+  .contact-lines a { color: #fff; text-decoration: none; font-weight: 600; }
+  .contact-lines a:hover { color: var(--yellow); }
+  .contact-main { padding: 40px; min-width: 0; }
+  .panel h3 { font-size: 24px; margin-bottom: 6px; }
+  .panel > p { color: var(--muted); margin-bottom: 22px; }
+  form { display: grid; gap: 14px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; color: var(--ink); }
+  input, select, textarea {
+    width: 100%; padding: 13px 16px; border-radius: 12px; border: 1.5px solid var(--line);
+    background: var(--surface); color: var(--ink); font: inherit; font-size: 16px;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--pink); background: #fff; box-shadow: 0 0 0 3px #FBE3EC; }
+  textarea { min-height: 130px; resize: vertical; }
+  form .btn { justify-self: start; }
+  .sent { font-weight: 600; font-size: 15px; color: var(--pink-text); }
+  .calendly { border-radius: 18px; }
+  .calendly iframe { width: 100%; height: 700px; border: 0; display: block; }
+
+  body > footer { background: var(--ink); color: var(--on-ink-muted); padding-block: 80px 40px; font-size: 16px; }
+  .foot-grid { display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 56px; }
+  .foot-logo { width: min(100%, 240px); height: auto; margin-bottom: 24px; }
+  .foot-about p { color: var(--on-ink-muted); font-size: 17px; max-width: 420px; }
+  .foot-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .foot-tags span { border: 1px solid #45405C; border-radius: 999px; padding: 7px 16px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--on-ink); }
+  .foot-col h3 { display: flex; align-items: center; gap: 12px; font-family: var(--body); font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); margin-bottom: 22px; }
+  .foot-col h3::before { content: ""; width: 28px; height: 3px; border-radius: 3px; background: var(--pink); }
+  .foot-col ul { list-style: none; display: grid; gap: 12px; color: var(--on-ink); }
+  .foot-col a { text-decoration: none; color: var(--on-ink); }
+  .foot-col a:hover { color: var(--yellow); }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 24px; margin-top: 64px; padding-top: 28px; border-top: 1px solid #34304A; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  .foot nav { height: auto; gap: 24px; flex-wrap: wrap; justify-content: flex-start; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--yellow); }
+
+  /* Pastille rendez-vous */
+  .rdv-fab {
+    position: fixed; z-index: 90; right: calc(20px + env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border-radius: 999px;
+    background: var(--yellow); color: var(--ink); text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: .1em; text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(18, 11, 31, .35); transition: transform .2s, box-shadow .2s;
+  }
+  .rdv-fab svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .rdv-fab:hover { transform: translateY(-2px); box-shadow: 5px 5px 0 var(--pink); }
+
+  /* Appels à l'action intermédiaires */
+  .cta-strip { margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; background: var(--ink); color: var(--on-ink); border-radius: 22px; padding: 28px 32px; }
+  .cta-strip p { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2.2vw, 26px); color: #fff; }
+  .cta-strip p span { color: var(--yellow); }
+  .cta-strip .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 960px) {
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .foot-about { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    .foot-grid { grid-template-columns: 1fr; }
+    .rdv-fab { padding: 13px 18px; font-size: 13px; }
+    .cta-strip { padding: 24px 22px; }
+  }
+
+  /* Bandeaux défilants */
+  main { overflow-x: clip; }
+  .bands { position: relative; z-index: 3; margin-top: -78px; margin-bottom: -40px; }
+  .marquee { background: var(--pink); color: var(--ink); padding-block: 22px; overflow: hidden; transform: rotate(-2deg); margin: 0 -40px; position: relative; z-index: 2; }
+  .marquee.alt { background: var(--yellow); transform: rotate(-2deg); margin-top: -1px; z-index: 1; }
+  .track { display: flex; gap: 48px; width: max-content; animation: scroll 28s linear infinite; }
+  .marquee.alt .track { animation-direction: reverse; }
+  .track span { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 3vw, 34px); text-transform: uppercase; white-space: nowrap; }
+  .track span::after { content: "✦"; margin-left: 48px; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* Séparation des blocs */
+  #methode { border-top: 1px solid var(--line); }
+  #agence { border-bottom: 1px solid var(--line); }
+
+  .cal-preview { display: grid; grid-template-columns: 1fr 1.25fr; text-decoration: none; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+  .cal-preview:hover { transform: translateY(-2px); box-shadow: 6px 6px 0 var(--pink); }
+  .cal-info { padding: 28px; border-right: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
+  .cal-info img { width: 96px; height: auto; margin-bottom: 8px; }
+  .cal-info .who { color: var(--muted); font-size: 15px; font-weight: 600; }
+  .cal-info .what { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.2; }
+  .cal-info .meta { display: grid; gap: 6px; margin-top: 6px; color: var(--muted); font-size: 15px; }
+  .cal-month { padding: 28px; }
+  .cal-month h4 { font-family: var(--body); font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .cal-month .hint { font-size: 13.5px; color: var(--muted); margin-bottom: 16px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 14px; }
+  .cal-grid .dow { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; padding-bottom: 4px; }
+  .cal-grid span { aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; color: #B3ACBD; }
+  .cal-grid span.open { background: #FBE3EC; color: var(--pink-text); font-weight: 700; }
+  .cal-grid span.today { outline: 2px solid var(--ink); outline-offset: -2px; color: var(--ink); }
+  .cal-cta { margin-top: 18px; display: inline-flex; font-weight: 700; color: var(--pink-text); }
+  @media (max-width: 760px) { .cal-preview { grid-template-columns: 1fr; } .cal-info { border-right: 0; border-bottom: 1px solid var(--line); } }
+
+  /* Réalisations */
+  .portfolio { background: var(--bg); }
+  .work-grid { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: auto auto; gap: 20px; }
+  .work-tile { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--bg); transition: border-color .2s; }
+  .work-tile:first-child { grid-row: span 2; }
+  .work-tile:hover { border-color: var(--ink); }
+  .work-visual { position: relative; flex: 1; min-height: 240px; display: flex; align-items: flex-end; padding: 28px; overflow: hidden; }
+  .work-tile:first-child .work-visual { min-height: 420px; }
+  .work-visual span { position: relative; z-index: 1; font-family: var(--display); font-weight: 700; font-size: clamp(30px, 3.6vw, 52px); line-height: 1; max-width: 80%; }
+  .work-visual .ll { position: absolute; right: -6%; top: -8%; width: 58%; height: auto; fill: none; stroke-width: 18; opacity: .9; transition: transform .5s; }
+  .work-tile:hover .ll { transform: rotate(-8deg) scale(1.04); }
+  .p-pink .work-visual { background: var(--pink); } .p-pink .ll { stroke: var(--yellow); }
+  .p-yellow .work-visual { background: var(--yellow); } .p-yellow .ll { stroke: var(--pink); }
+  .p-mint .work-visual { background: var(--mint); } .p-mint .ll { stroke: var(--ink); }
+  .work-meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 20px 24px; border-top: 1px solid var(--line); }
+  .work-cat { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pink-text); }
+  .work-meta h3 { font-size: 21px; margin-top: 4px; }
+  .work-meta p { color: var(--muted); font-size: 16px; }
+  .work-link { font-weight: 700; white-space: nowrap; }
+  .work-all { margin-top: 32px; }
+
+  /* Tarifs */
+  .pricing-sec { background: var(--surface); }
+  .offers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .offer { background: var(--bg); border: 1px solid var(--line); border-top: 6px solid var(--ink); padding: 30px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .offer-print { background: var(--yellow); border-color: var(--yellow); border-top-color: var(--pink); }
+  .offer-print p, .offer-print li { color: var(--ink); }
+  .offer-kind { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--pink-text); }
+  .offer-print .offer-kind { color: var(--ink); }
+  .offer h3, .sub-intro h3 { font-size: 24px; }
+  .offer p { color: var(--muted); font-size: 16.5px; }
+  .offer ul { list-style: none; display: grid; gap: 6px; font-size: 16px; padding-top: 12px; border-top: 1px solid rgba(18, 11, 31, .12); }
+  .offer li { padding-left: 18px; position: relative; }
+  .offer li::before { content: ""; position: absolute; left: 0; top: .65em; width: 8px; height: 8px; background: var(--pink); }
+  .offer-price { margin-top: auto; padding-top: 16px; font-family: var(--display); font-weight: 700; font-size: 20px; }
+  .sub { margin-top: 56px; display: grid; grid-template-columns: 4fr 7fr; gap: 40px; align-items: start; }
+  .sub-intro { display: grid; gap: 14px; justify-items: start; }
+  .sub-intro p { color: var(--muted); }
+  .compare-wrap { overflow-x: auto; background: var(--bg); border: 1px solid var(--line); }
+  .compare { width: 100%; border-collapse: collapse; font-size: 15.5px; min-width: 620px; }
+  .compare caption { position: absolute; left: -9999px; }
+  .compare th, .compare td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .compare thead th { font-family: var(--display); font-size: 15px; color: var(--muted); }
+  .compare tbody th { font-weight: 700; color: var(--ink); width: 26%; }
+  .compare td { color: var(--muted); }
+  .compare .hl { background: #EAF2E8; color: var(--ink); font-weight: 600; }
+  .compare thead .hl { background: var(--yellow); color: var(--ink); }
+  .compare tr:last-child th, .compare tr:last-child td { border-bottom: 0; }
+  .price-note { margin-top: 24px; color: var(--muted); font-size: 15.5px; }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 4fr 7fr; gap: 56px; align-items: start; }
+  .faq-head h2 { font-size: clamp(32px, 4vw, 52px); }
+  .faq-head p { color: var(--muted); margin-top: 16px; }
+  .faq-list { border-top: 2px solid var(--ink); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-family: var(--display); font-weight: 700; font-size: 19px; color: var(--ink); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 26px; line-height: 1; color: var(--pink); transition: transform .2s; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding: 0 40px 24px 0; color: var(--muted); }
+
+  /* Angles droits */
+  .service, .aud, .review, .cta-strip, .contact-card, .pricing-note, .portrait img, .case, .choice, .choice .ico, input, select, textarea, .cal-preview { border-radius: 0 !important; }
+  .service { border-left: 6px solid var(--ink); }
+
+  @media (max-width: 960px) {
+    .work-grid, .offers, .sub, .faq-grid { grid-template-columns: 1fr; }
+    .work-tile:first-child { grid-row: auto; }
+    .work-tile:first-child .work-visual { min-height: 280px; }
+  }
+
+  /* Curseur */
+  .cursor {
+    position: fixed; top: 0; left: 0; z-index: 100; pointer-events: none;
+    width: 32px; height: 32px; margin: -16px 0 0 -16px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(18, 11, 31, .12); border: 1px solid rgba(233, 68, 137, .5); opacity: 0;
+    transition: width .25s, height .25s, margin .25s, opacity .3s;
+  }
+  .cursor svg { width: 16px; height: 16px; fill: none; stroke: var(--pink); stroke-width: 22; opacity: .8; animation: spin 3s linear infinite; }
+  .cursor.on { opacity: 1; }
+  .cursor.big { width: 48px; height: 48px; margin: -24px 0 0 -24px; }
+  @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
+
+  @media (max-width: 960px) {
+    section { padding-block: 72px; }
+    .links, header .btn { display: none; }
+    .burger { display: block; }
+    .links.open {
+      display: grid; position: absolute; top: 76px; left: 0; right: 0; gap: 18px; background: var(--ink);
+      padding: 24px max(24px, env(safe-area-inset-right, 0px)) 28px max(24px, env(safe-area-inset-left, 0px)); font-size: 19px;
+    }
+    .hero-grid, .head, .about, .contact-card { grid-template-columns: 1fr; gap: 40px; }
+    .contact-card { gap: 0; border-radius: 22px; }
+    .contact-side, .contact-main { padding: 28px 22px; }
+    .sticker { display: none; }
+    .services, .audiences, .work, .reviews { grid-template-columns: 1fr; }
+    .review:first-child, .review:nth-child(4) { grid-row: auto; grid-column: auto; }
+    .pricing { grid-template-columns: 1fr 1fr; }
+    .steps, .figures { grid-template-columns: 1fr 1fr; }
+    .portrait { max-width: 340px; }
+    .portrait img { height: auto; min-height: 0; aspect-ratio: 4 / 5; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .steps, .commitments, .row, .pricing { grid-template-columns: 1fr; }
+    .service { padding: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor" aria-hidden="true"><svg viewBox="236 60 176 164"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigation principale">
+      <a href="#" class="logo"><img src="img/logo-blanc-framboise.svg" alt="Allyra" width="98" height="36"></a>
+      <div class="links" id="links">
+        <a href="#expertises">Services</a>
+        <a href="#references">Réalisations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#agence">L'agence</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="label">Agence de communication · Somme, Hauts-de-France</span>
+        <h1>Une communication qui se <span class="y">remarque</span>, et des résultats qui se <span class="p">mesurent</span>.</h1>
+        <p class="lead">Stratégie, identité, réseaux sociaux, print&nbsp;: Allyra donne aux entreprises, collectivités et associations une voix claire et cohérente, sur tous leurs supports.</p>
+        <div class="cta">
+          <a href="#contact" class="btn">Démarrer un projet →</a>
+          <a href="#references" class="btn ghost">Voir nos réalisations</a>
+        </div>
+        <div class="proof">
+          <span>Interlocutrice unique</span>
+          <span>Devis détaillé sous 48&nbsp;h</span>
+          <span>Bon à tirer avant toute impression</span>
+        </div>
+      </div>
+      <div class="sticker" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 160 160">
+          <defs><path id="circle" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs>
+          <circle cx="80" cy="80" r="30" fill="#A9C6A2"/>
+          <text><textPath href="#circle" textLength="388" lengthAdjust="spacing">CRÉATIVITÉ • STRATÉGIE • IMPACT •</textPath></text>
+        </svg>
+        <svg class="sticker-ll" viewBox="236 60 176 164"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg>
+      </div>
+    </div>
+  </section>
+
+<div class="bands" aria-hidden="true">
+  <div class="marquee"><div class="track">
+    <span>Stratégie de marque</span><span>Identité visuelle</span><span>Social media</span><span>Print</span><span>Influence</span><span>Événementiel</span>
+    <span>Stratégie de marque</span><span>Identité visuelle</span><span>Social media</span><span>Print</span><span>Influence</span><span>Événementiel</span>
+  </div></div>
+  <div class="marquee alt"><div class="track">
+    <span>Audace</span><span>Clarté</span><span>Émotion</span><span>Résultats</span><span>Audace</span><span>Clarté</span><span>Émotion</span><span>Résultats</span>
+    <span>Audace</span><span>Clarté</span><span>Émotion</span><span>Résultats</span><span>Audace</span><span>Clarté</span><span>Émotion</span><span>Résultats</span>
+  </div></div>
+</div>
+
+  <section id="expertises">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Services</span><h2>Quatre expertises, une seule exigence&nbsp;: votre image.</h2></div>
+        <p>Confiez-nous un besoin ponctuel ou l'ensemble de votre communication. Chaque mission fait l'objet d'un devis détaillé.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <h3>Stratégie de marque</h3>
+          <p>Diagnostic, positionnement et plan de communication pour donner un cap clair à vos prises de parole.</p>
+          <ul><li>Audit</li><li>Plateforme de marque</li><li>Plan de communication</li></ul>
+        </article>
+        <article class="service">
+          <h3>Identité visuelle</h3>
+          <p>Logo, charte graphique et modèles de documents pour une image reconnaissable sur tous vos supports.</p>
+          <ul><li>Logo</li><li>Charte graphique</li><li>Papeterie</li></ul>
+        </article>
+        <article class="service">
+          <h3>Réseaux sociaux</h3>
+          <p>Ligne éditoriale, animation de vos comptes et campagnes sponsorisées, avec un suivi des résultats.</p>
+          <ul><li>Instagram</li><li>LinkedIn</li><li>Facebook</li><li>Campagnes</li></ul>
+        </article>
+        <article class="service">
+          <h3>Supports et impression</h3>
+          <p>Papeterie, signalétique, textile, objets publicitaires&nbsp;: nous concevons vos supports de communication et gérons leur fabrication, jusqu'à la livraison.</p>
+          <ul><li>Flyers et brochures</li><li>Cartes de visite</li><li>Kakémonos et bâches</li><li>Stickers</li><li>Textile</li><li>Goodies</li></ul>
+        </article>
+      </div>
+      <div class="cta-strip">
+        <p>Un projet en tête&nbsp;? <span>Parlons-en.</span></p>
+        <div class="actions">
+          <a class="btn" href="#rdv">Réserver un appel</a>
+          <a class="btn ghost" href="#contact">Écrire mon projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publics" class="audiences-band">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Pour qui</span><h2>Une approche adaptée à votre organisation.</h2></div>
+        <p>Nous adaptons le discours, les délais et les circuits de validation à votre fonctionnement.</p>
+      </div>
+      <div class="audiences">
+        <div class="aud"><div class="dot" style="background:var(--yellow)"><svg viewBox="236 60 176 164"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div><h3>Entreprises et PME</h3><p>Clarifier votre offre, gagner en visibilité auprès de vos clients et recruter grâce à une image professionnelle.</p></div>
+        <div class="aud"><div class="dot" style="background:var(--pink)"><svg viewBox="236 60 176 164"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div><h3>Collectivités et institutions</h3><p>Informer les habitants, valoriser vos projets et respecter vos circuits de validation et de calendrier.</p></div>
+        <div class="aud"><div class="dot" style="background:var(--mint)"><svg viewBox="236 60 176 164"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div><h3>Associations et réseaux</h3><p>Fédérer vos adhérents, promouvoir vos événements et rendre votre action visible auprès de vos partenaires.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methode">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Méthode</span><h2>Un déroulé clair, validé à chaque étape.</h2></div>
+        <p>Vous savez à tout moment où en est votre projet et ce qui vous sera présenté ensuite.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Écouter</h3><p>Échange sur vos objectifs, vos publics et vos contraintes, puis devis détaillé.</p></div>
+        <div class="step"><h3>Imaginer</h3><p>Recommandation stratégique et pistes créatives, présentées et ajustées avec vous.</p></div>
+        <div class="step"><h3>Créer</h3><p>Réalisation des livrables, validations écrites et bon à tirer avant impression.</p></div>
+        <div class="step"><h3>Mesurer</h3><p>Analyse des résultats et recommandations pour la suite.</p></div>
+      </div>
+      <div class="cta-strip">
+        <p>Envie de démarrer&nbsp;? <span>Premier échange offert.</span></p>
+        <div class="actions">
+          <a class="btn" href="#rdv">Réserver un appel</a>
+          <a class="btn ghost" href="#contact">Écrire mon projet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarifs" class="pricing-sec">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Tarifs</span><h2>Trois façons de travailler avec Allyra</h2></div>
+        <p>Au projet, à la tâche ou en abonnement mensuel. Chaque demande fait l'objet d'un devis gratuit et détaillé.</p>
+      </div>
+      <div class="offers">
+        <article class="offer">
+          <span class="offer-kind">Au projet</span>
+          <h3>Une mission complète, un prix global</h3>
+          <p>Pour une création d'identité visuelle, un plan de communication ou le lancement d'une activité.</p>
+          <ul><li>Périmètre et livrables fixés au devis</li><li>Prix connu dès le départ</li><li>Acompte de 50&nbsp;% à la commande</li></ul>
+          <span class="offer-price">Sur devis</span>
+        </article>
+        <article class="offer">
+          <span class="offer-kind">À la tâche</span>
+          <h3>Une prestation précise, un prix par prestation</h3>
+          <p>Pour un besoin ponctuel, sans engagement.</p>
+          <ul><li>Logo ou retouche de logo</li><li>Carte de visite, flyer, affiche</li><li>Panneau immobilier, kakémono</li><li>Visuel pour les réseaux sociaux</li></ul>
+          <span class="offer-price">Sur devis</span>
+        </article>
+        <article class="offer offer-print">
+          <span class="offer-kind">Impression</span>
+          <h3>Des prix d'impression compétitifs</h3>
+          <p>Allyra travaille avec des imprimeurs partenaires et vous fait profiter de tarifs compétitifs, sur le papier comme sur la signalétique, le textile ou les objets publicitaires.</p>
+          <ul><li>Devis d'impression détaillé</li><li>Bon à tirer validé avant fabrication</li><li>Livraison à l'adresse de votre choix</li></ul>
+          <span class="offer-price">Selon support et quantité</span>
+        </article>
+      </div>
+
+      <div class="sub">
+        <div class="sub-intro">
+          <span class="offer-kind">Abonnement</span>
+          <h3>Une graphiste dédiée chaque mois</h3>
+          <p>Pour une communication suivie dans la durée, en particulier la gestion de vos réseaux sociaux et la création régulière de visuels. Le contenu de l'abonnement est défini ensemble dans le devis.</p>
+          <a class="btn" href="#contact">Demander un devis d'abonnement →</a>
+        </div>
+        <div class="compare-wrap">
+          <table class="compare">
+            <caption>Abonnement Allyra comparé aux autres solutions</caption>
+            <thead><tr><th scope="col"></th><th scope="col" class="hl">Abonnement Allyra</th><th scope="col">Freelance au coup par coup</th><th scope="col">Recrutement interne</th></tr></thead>
+            <tbody><tr><th scope="row">Prix</th><td class="hl">Forfait mensuel fixe</td><td>Un devis par mission</td><td>Salaire et charges</td></tr><tr><th scope="row">Devis avant chaque demande</th><td class="hl">Non, c'est prévu au forfait</td><td>Oui, à chaque fois</td><td>Non</td></tr><tr><th scope="row">Interlocuteur</th><td class="hl">La même graphiste chaque mois</td><td>Variable selon les missions</td><td>Un salarié dédié</td></tr><tr><th scope="row">Connaissance de votre marque</th><td class="hl">Suivie dans la durée</td><td>À réexpliquer à chaque fois</td><td>Après une période d'intégration</td></tr><tr><th scope="row">Impression</th><td class="hl">Gérée par Allyra, à prix compétitifs</td><td>Rarement prise en charge</td><td>À organiser en interne</td></tr><tr><th scope="row">Engagement</th><td class="hl">Résiliable avec un préavis d'un mois</td><td>Mission par mission</td><td>Contrat de travail</td></tr><tr><th scope="row">Administratif</th><td class="hl">Une facture par mois</td><td>Une facture par mission</td><td>Paie, charges, congés</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="price-note">Prix TTC, TVA non applicable (article 293 B du CGI). Devis gratuit sous 48&nbsp;h.</p>
+    </div>
+  </section>
+
+  <section id="references" class="portfolio">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Réalisations</span><h2>Des projets bien réels</h2></div>
+        <p>Une sélection de projets récents. Retrouvez les visuels complets sur le compte Instagram d'Allyra.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work-tile p-pink" href="https://www.instagram.com/allyra.agence/" target="_blank" rel="noopener">
+          <div class="work-visual"><span>Les clefs de Sidonie</span><svg class="ll" viewBox="236 60 176 164" aria-hidden="true"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div>
+          <div class="work-meta">
+            <div><span class="work-cat">Supports imprimés</span><h3>Les clefs de Sidonie</h3><p>Cartes de visite, flyers, panneaux</p></div>
+            <span class="work-link">Voir le projet →</span>
+          </div>
+        </a>
+        <a class="work-tile p-yellow" href="https://www.instagram.com/allyra.agence/" target="_blank" rel="noopener">
+          <div class="work-visual"><span>Panneaux immobiliers</span><svg class="ll" viewBox="236 60 176 164" aria-hidden="true"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div>
+          <div class="work-meta">
+            <div><span class="work-cat">Supports imprimés</span><h3>Panneaux immobiliers</h3><p>Panneaux et cartes de visite pour Jennifer L.</p></div>
+            <span class="work-link">Voir le projet →</span>
+          </div>
+        </a>
+        <a class="work-tile p-mint" href="https://www.instagram.com/allyra.agence/" target="_blank" rel="noopener">
+          <div class="work-visual"><span>Bweeni</span><svg class="ll" viewBox="236 60 176 164" aria-hidden="true"><path d="M245.47,213.9c19.42,0,60.83-44.12,62.87-85.29,1.41-28.46-1.54-58.71-20.71-58.51-17.1.18-22.34,28.82-21.53,55.77.97,32.01,25.01,88.03,58.02,88.03"/><path d="M402.77,213.9c-19.42,0-60.83-44.12-62.87-85.29-1.41-28.46,1.54-58.71,20.71-58.51,17.1.18,22.34,28.82,21.53,55.77-.97,32.01-25.01,88.03-58.02,88.03"/></svg></div>
+          <div class="work-meta">
+            <div><span class="work-cat">Identité visuelle</span><h3>Bweeni</h3><p>Création de l'identité visuelle</p></div>
+            <span class="work-link">Voir le projet →</span>
+          </div>
+        </a>
+      </div>
+      <div class="work-all"><a class="btn" href="https://www.instagram.com/allyra.agence/" target="_blank" rel="noopener">Tous les projets sur Instagram →</a></div>
+    </div>
+  </section>
+
+  <section class="figures-band" aria-label="Chiffres clés">
+    <div class="wrap">
+      <div class="figures">
+        <div class="figure"><div class="v">25+</div><div class="l">projets livrés</div></div>
+        <div class="figure"><div class="v">6</div><div class="l">organisations accompagnées</div></div>
+        <div class="figure"><div class="v">48&nbsp;h</div><div class="l">pour recevoir un devis</div></div>
+        <div class="figure"><div class="v">99&nbsp;%</div><div class="l">de clients satisfaits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agence">
+    <div class="wrap about">
+      <figure class="portrait">
+        <img src="img/portrait.webp" alt="Portrait de Laure-Allyre Perrin, fondatrice d'Allyra" width="1122" height="1402" loading="lazy">
+        <figcaption>Laure-Allyre, fondatrice</figcaption>
+      </figure>
+      <div>
+        <span class="label">L'agence</span>
+        <h2>Une agence à taille humaine, <em>des idées qui portent.</em></h2>
+        <p>Allyra accompagne ses clients sur toute la chaîne de la communication, du conseil stratégique à la fabrication des supports, depuis la Somme.</p>
+        <p>Vous travaillez directement avec la fondatrice, sans intermédiaire, avec des engagements écrits sur les délais, les validations et les livrables.</p>
+        <div class="commitments">
+          <div><h3>Interlocutrice unique</h3><p>Une seule personne suit votre dossier du début à la fin.</p></div>
+          <div><h3>Engagements écrits</h3><p>Devis détaillé, CGV et bon à tirer avant impression.</p></div>
+          <div><h3>Créativité</h3><p>Des propositions qui vous distinguent, sans perdre de vue vos objectifs.</p></div>
+          <div><h3>Proximité</h3><p>Rendez-vous possibles dans vos locaux, dans la Somme et les Hauts-de-France.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="avis" aria-label="Avis clients">
+    <div class="wrap">
+      <div class="reviews-head">
+        <div><span class="label">Avis clients</span><h2>Ils nous ont fait confiance.</h2></div>
+        <div class="score"><span class="big">5/5</span><div><span class="stars" aria-hidden="true">★★★★★</span><small>4 avis sur Google</small></div></div>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <blockquote>Je recommande vivement cette graphiste&nbsp;! Elle est à l’écoute, respecte parfaitement les demandes tout en apportant de très bons conseils pour améliorer et sublimer les projets. Son efficacité et sa rapidité sont également très appréciables.<br>C’est un réel plaisir de travailler avec elle. Elle a réalisé pour moi des cartes de visite, flyers, panneaux et autres supports, toujours avec un rendu professionnel, soigné et de grande qualité.<br>Je la recommande sans hésitation&nbsp;!</blockquote>
+          <footer><strong>Les clefs de Sidonie</strong><span>Mai 2026</span></footer>
+        </article>
+        <article class="review">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <blockquote>Très bonne expérience, de la maquette à la livraison. Au top&nbsp;!</blockquote>
+          <footer><strong>Auriane G.</strong><span>Juillet 2026</span></footer>
+        </article>
+        <article class="review">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <blockquote>J’ai fait appel à cette graphiste pour la création de mes panneaux immobiliers ainsi que de mes cartes de visite, et je suis absolument ravie du résultat&nbsp;! […]</blockquote>
+          <footer><strong>Jennifer L.</strong><span>Mai 2026</span></footer>
+        </article>
+        <article class="review">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <blockquote>Je recommande vivement car service impeccable, réactivité et qualité de travail&nbsp;!</blockquote>
+          <footer><strong>Christine G.</strong><span>Juin 2026</span></footer>
+        </article>
+      </div>
+      <div class="reviews-note">
+        <span>Avis clients publiés sur Google, reproduits sans modification. Les avis Google ne font pas l’objet d’une vérification.</span>
+        <a href="https://www.google.com/search?q=Allyra+Agence" target="_blank" rel="noopener">Voir tous les avis sur Google →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-head">
+        <span class="label">FAQ</span><h2>Questions fréquentes</h2>
+        <p>Les réponses aux questions les plus posées avant de lancer un projet avec Allyra.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quels services propose Allyra&nbsp;?</summary>
+          <p>Allyra accompagne les entreprises, les collectivités et les associations en stratégie de marque, en identité visuelle (logo, charte graphique), en réseaux sociaux et en conception de supports de communication : cartes de visite, flyers, affiches, panneaux, kakémonos, stickers, textile et objets publicitaires.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Où est située l'agence&nbsp;?</summary>
+          <p>Allyra est installée dans la Somme et travaille avec des clients de la Somme et des Hauts-de-France. Les échanges peuvent se faire par téléphone ou en visio.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Combien coûte la création d'un logo ou d'un flyer&nbsp;?</summary>
+          <p>Chaque demande fait l'objet d'un devis gratuit et détaillé, envoyé sous 48 h. Le prix dépend de la prestation : au projet pour une mission complète, à la tâche pour un besoin ponctuel, ou en abonnement mensuel pour un suivi régulier.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Allyra s'occupe-t-elle de l'impression&nbsp;?</summary>
+          <p>Oui. Allyra gère l'impression de vos supports avec des imprimeurs partenaires, à des prix compétitifs. Vous validez un bon à tirer avant toute fabrication, puis les supports sont livrés à l'adresse de votre choix.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Combien de modifications sont incluses&nbsp;?</summary>
+          <p>Le nombre de séries de modifications dépend de la formule choisie et il est précisé dans le devis. Les modifications supplémentaires font l'objet d'un devis complémentaire.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Comment fonctionne l'abonnement mensuel&nbsp;?</summary>
+          <p>L'abonnement est un forfait mensuel fixe dont le contenu est défini ensemble dans le devis. Il est facturé en début de mois et peut être résilié avec un préavis d'un mois.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Comment se passe le paiement&nbsp;?</summary>
+          <p>Un acompte de 50 % est demandé à la signature du devis, le solde est réglé à la livraison. Les prix sont indiqués TTC, la TVA n'étant pas applicable (article 293 B du CGI).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Est-ce que je récupère les fichiers et les droits&nbsp;?</summary>
+          <p>Après paiement complet, les droits d'utilisation des créations vous sont cédés pour les usages prévus au devis. Les fichiers sources sont remis lorsque le devis le prévoit.</p>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quels services propose Allyra ?", "acceptedAnswer": {"@type": "Answer", "text": "Allyra accompagne les entreprises, les collectivités et les associations en stratégie de marque, en identité visuelle (logo, charte graphique), en réseaux sociaux et en conception de supports de communication : cartes de visite, flyers, affiches, panneaux, kakémonos, stickers, textile et objets publicitaires."}}, {"@type": "Question", "name": "Où est située l'agence ?", "acceptedAnswer": {"@type": "Answer", "text": "Allyra est installée dans la Somme et travaille avec des clients de la Somme et des Hauts-de-France. Les échanges peuvent se faire par téléphone ou en visio."}}, {"@type": "Question", "name": "Combien coûte la création d'un logo ou d'un flyer ?", "acceptedAnswer": {"@type": "Answer", "text": "Chaque demande fait l'objet d'un devis gratuit et détaillé, envoyé sous 48 h. Le prix dépend de la prestation : au projet pour une mission complète, à la tâche pour un besoin ponctuel, ou en abonnement mensuel pour un suivi régulier."}}, {"@type": "Question", "name": "Allyra s'occupe-t-elle de l'impression ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Allyra gère l'impression de vos supports avec des imprimeurs partenaires, à des prix compétitifs. Vous validez un bon à tirer avant toute fabrication, puis les supports sont livrés à l'adresse de votre choix."}}, {"@type": "Question", "name": "Combien de modifications sont incluses ?", "acceptedAnswer": {"@type": "Answer", "text": "Le nombre de séries de modifications dépend de la formule choisie et il est précisé dans le devis. Les modifications supplémentaires font l'objet d'un devis complémentaire."}}, {"@type": "Question", "name": "Comment fonctionne l'abonnement mensuel ?", "acceptedAnswer": {"@type": "Answer", "text": "L'abonnement est un forfait mensuel fixe dont le contenu est défini ensemble dans le devis. Il est facturé en début de mois et peut être résilié avec un préavis d'un mois."}}, {"@type": "Question", "name": "Comment se passe le paiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Un acompte de 50 % est demandé à la signature du devis, le solde est réglé à la livraison. Les prix sont indiqués TTC, la TVA n'étant pas applicable (article 293 B du CGI)."}}, {"@type": "Question", "name": "Est-ce que je récupère les fichiers et les droits ?", "acceptedAnswer": {"@type": "Answer", "text": "Après paiement complet, les droits d'utilisation des créations vous sont cédés pour les usages prévus au devis. Les fichiers sources sont remis lorsque le devis le prévoit."}}]}</script>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="label">Contact</span><h2>Parlons de votre projet.</h2></div>
+        <p>Par écrit ou de vive voix, choisissez ce qui vous arrange. Vous recevez une première proposition et un devis détaillé sous 48&nbsp;h.</p>
+      </div>
+      <div class="contact-card" id="rdv">
+        <aside class="contact-side">
+          <h3>Comment souhaitez-vous démarrer&nbsp;?</h3>
+          <div class="choices" role="tablist" aria-label="Choisir un moyen de contact">
+            <button class="choice" role="tab" id="tab-ecrire" aria-controls="panel-ecrire" aria-selected="true" type="button"><span class="ico">✍️</span><span><strong>Écrire mon projet</strong><small>Réponse et devis sous 48&nbsp;h</small></span></button>
+            <button class="choice" role="tab" id="tab-appel" aria-controls="panel-appel" aria-selected="false" type="button"><span class="ico">📅</span><span><strong>Réserver un appel</strong><small>Appel découverte gratuit</small></span></button>
+          </div>
+          <div class="contact-lines">
+            <a href="mailto:contact@allyra-agence.com">contact@allyra-agence.com</a>
+            <a href="tel:+33650689615">06 50 68 96 15</a>
+            <span>Somme, Hauts-de-France</span>
+          </div>
+        </aside>
+        <div class="contact-main">
+          <div class="panel" id="panel-ecrire" role="tabpanel" aria-labelledby="tab-ecrire">
+            <h3>Décrivez votre besoin</h3>
+            <p>Quelques lignes suffisent, nous revenons vers vous rapidement.</p>
+            <form id="form">
+          <div class="row">
+            <label for="f-nom">Nom et prénom<input id="f-nom" name="nom" autocomplete="name" required></label>
+            <label for="f-org">Organisation<input id="f-org" name="organisation" autocomplete="organization"></label>
+          </div>
+          <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" autocomplete="email" required></label>
+          <label for="f-besoin">Votre besoin
+            <select id="f-besoin" name="besoin" required>
+              <option value="">Sélectionnez</option>
+              <option>Stratégie de marque</option>
+              <option>Identité visuelle</option>
+              <option>Réseaux sociaux</option>
+              <option>Supports et impression</option>
+              <option>Accompagnement global</option>
+            </select>
+          </label>
+          <label for="f-msg">Votre message<textarea id="f-msg" name="message" required></textarea></label>
+          <button class="btn" type="submit">Envoyer la demande →</button>
+          <p class="sent" id="sent" hidden>Votre messagerie va s'ouvrir avec le message pré-rempli. Il ne vous reste qu'à l'envoyer.</p>
+        </form>
+          </div>
+          <div class="panel" id="panel-appel" role="tabpanel" aria-labelledby="tab-appel" hidden>
+            <h3>Choisissez un créneau</h3>
+            <p>Un appel découverte gratuit et sans engagement pour faire le point sur votre besoin.</p>
+            <div class="calendly" id="calendly" data-url="https://calendly.com/allyra-agence/appel-decouverte">
+              <a class="cal-preview" href="https://calendly.com/allyra-agence/appel-decouverte" target="_blank" rel="noopener" aria-label="Ouvrir le calendrier de rendez-vous sur Calendly">
+                <div class="cal-info">
+                  <img src="img/logo-encre-framboise.svg" alt="" width="96" height="35">
+                  <span class="who">Laure-Allyre · Allyra</span>
+                  <span class="what">Appel découverte</span>
+                  <div class="meta"><span>🕑 Échange gratuit</span><span>📞 Par téléphone ou en visio</span></div>
+                </div>
+                <div class="cal-month">
+                  <h4 id="cal-title">Choisissez une date</h4>
+                  <p class="hint">Aperçu. Les créneaux disponibles s'affichent sur Calendly.</p>
+                  <div class="cal-grid" id="cal-grid"></div>
+                  <span class="cal-cta">Voir les créneaux disponibles →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <img class="foot-logo" src="img/logo-blanc-framboise.svg" alt="Allyra" width="240" height="88" loading="lazy">
+        <p>Agence de communication dans la Somme. Stratégie de marque, identité visuelle, réseaux sociaux et supports de communication, de l'idée jusqu'à l'impression.</p>
+        <div class="foot-tags"><span>Somme</span><span>Hauts-de-France</span><span>Print</span></div>
+      </div>
+      <div class="foot-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#expertises">Stratégie de marque</a></li>
+          <li><a href="#expertises">Identité visuelle</a></li>
+          <li><a href="#expertises">Réseaux sociaux</a></li>
+          <li><a href="#expertises">Supports et impression</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:contact@allyra-agence.com">contact@allyra-agence.com</a></li>
+          <li><a href="tel:+33650689615">06 50 68 96 15</a></li>
+          <li>Somme, Hauts-de-France</li>
+          <li>Devis sous 48&nbsp;h</li>
+          <li><a href="#contact">Démarrer un projet</a></li>
+          <li><a href="https://calendly.com/allyra-agence/appel-decouverte" target="_blank" rel="noopener">Réserver un appel découverte</a></li>
+          <li><a href="https://www.instagram.com/allyra.agence/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <nav aria-label="Liens légaux">
+        <span>© <span id="year"></span> Allyra</span>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="cgv.html">CGV</a>
+      </nav>
+      <span>Agence de communication · Somme</span>
+    </div>
+  </div>
+</footer>
+
+<a class="rdv-fab" href="https://calendly.com/allyra-agence/appel-decouverte" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Prendre rendez-vous</a>
+
+<script>
+  const links = document.getElementById('links');
+  const burger = document.getElementById('burger');
+  burger.onclick = () => burger.setAttribute('aria-expanded', links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.onclick = () => {
+    links.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  });
+
+  // Sans serveur : le formulaire ouvre la messagerie avec le message pré-rempli.
+  document.getElementById('form').onsubmit = e => {
+    e.preventDefault();
+    const d = new FormData(e.target);
+    const body = `Nom : ${d.get('nom')}\nOrganisation : ${d.get('organisation')}\nE-mail : ${d.get('email')}\nBesoin : ${d.get('besoin')}\n\n${d.get('message')}`;
+    location.href = `mailto:contact@allyra-agence.com?subject=${encodeURIComponent('Demande de devis : ' + d.get('besoin'))}&body=${encodeURIComponent(body)}`;
+    document.getElementById('sent').hidden = false;
+  };
+
+  const cursor = document.getElementById('cursor');
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+    addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; cursor.classList.add('on'); });
+    document.addEventListener('mouseleave', () => cursor.classList.remove('on'));
+    document.querySelectorAll('a, button, input, textarea, select, .service').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
+    (function follow() {
+      cx += (x - cx) * .2; cy += (y - cy) * .2;
+      cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+      requestAnimationFrame(follow);
+    })();
+  }
+
+  // Calendrier intégré sur le site en ligne ; ailleurs (aperçu), le bouton suffit.
+  const cal = document.getElementById('calendly');
+  if (/(^|\.)allyra-agence\.com$/.test(location.hostname) || location.protocol === 'file:' || location.hostname === 'localhost') {
+    cal.innerHTML = `<iframe src="${cal.dataset.url}?hide_gdpr_banner=1&primary_color=e0457b" title="Prendre rendez-vous avec Allyra" loading="lazy"></iframe>`;
+  } else {
+    cal.style.minHeight = '0';
+    const grid = document.getElementById('cal-grid');
+    const now = new Date(), y = now.getFullYear(), m = now.getMonth();
+    const first = (new Date(y, m, 1).getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
+    document.getElementById('cal-title').textContent = now.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }).replace(/^./, c => c.toUpperCase());
+    let html = ['L', 'M', 'M', 'J', 'V', 'S', 'D'].map(d => `<b class="dow">${d}</b>`).join('');
+    html += '<span></span>'.repeat(first);
+    for (let d = 1; d <= days; d++) {
+      const wd = (first + d - 1) % 7, cls = d === now.getDate() ? 'today' : (d > now.getDate() && wd < 5 ? 'open' : '');
+      html += `<span class="${cls}">${d}</span>`;
+    }
+    grid.innerHTML = html;
+  }
+
+  // Contact : bascule entre « Écrire mon projet » et « Réserver un appel ».
+  const tabs = document.querySelectorAll('.choice');
+  function showTab(id) {
+    tabs.forEach(t => {
+      const on = t.id === id;
+      t.setAttribute('aria-selected', on);
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(t => t.addEventListener('click', () => showTab(t.id)));
+  document.querySelectorAll('a[href="#rdv"]').forEach(a => a.addEventListener('click', () => showTab('tab-appel')));
+  addEventListener('hashchange', () => { if (location.hash === '#rdv') showTab('tab-appel'); });
+  if (location.hash === '#rdv') showTab('tab-appel');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
