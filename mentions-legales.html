@@ -9,13 +9,13 @@
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #1D1A2E;
-    --paper: #F4F2F6;
+    --paper: #E8E4DF;
     --pink: #E0457B;
-    --yellow: #A9C6A2;
+    --yellow: #E0457B;
     --muted: #5F5B6E;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,7 +29,7 @@
   .logo img { height: 40px; width: auto; }
   .back { text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 999px; background: var(--yellow); color: var(--ink); }
   .hero { background: var(--ink); color: var(--paper); padding: 60px 0 80px; }
-  h1, h2 { font-family: "Syne", sans-serif; line-height: 1.12; letter-spacing: 0.005em; font-weight: 700; }
+  h1, h2 { font-family: "Gloock", Georgia, serif; font-weight: 400; line-height: 1.12; letter-spacing: 0.005em; font-weight: 700; }
   h1 { font-size: clamp(40px, 7vw, 72px); }
   .hero p { color: #B9AFC9; margin-top: 16px; }
   .note {
@@ -38,7 +38,7 @@
   }
   .toc { margin: 40px 0; columns: 2; column-gap: 32px; list-style: none; counter-reset: t; }
   .toc li { counter-increment: t; break-inside: avoid; margin-bottom: 6px; }
-  .toc li::before { content: counter(t, decimal-leading-zero) "  "; font-family: "Syne"; font-weight: 700; color: var(--pink); }
+  .toc li::before { content: counter(t, decimal-leading-zero) "  "; font-family: "Gloock"; font-weight: 700; color: var(--pink); }
   .toc a { text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
   article { padding-bottom: 100px; counter-reset: a; }
@@ -60,7 +60,7 @@
     transition: width .25s, height .25s, margin .25s, background .25s, opacity .3s;
   }
   .cursor svg {
-    width: 16px; height: 16px; fill: none; stroke: #A9C6A2; stroke-width: 22; opacity: .75;
+    width: 16px; height: 16px; fill: none; stroke: #E0457B; stroke-width: 22; opacity: .75;
     animation: loops 3s linear infinite; transition: width .25s, height .25s;
   }
   @keyframes loops { to { transform: rotate(360deg); } }
@@ -70,8 +70,6 @@
   @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
   @media (prefers-reduced-motion: reduce) { .cursor svg { animation: none; } }
   @media (max-width: 640px) { .toc { columns: 1; } }
-  .btn:not(.ghost), .rdv-fab { background: var(--pink); color: #fff; }
-  .btn:not(.ghost):hover, .rdv-fab:hover { box-shadow: 5px 5px 0 var(--yellow); }
 </style>
 </head>
 <body>
@@ -79,7 +77,7 @@
 
 <header>
   <nav>
-    <a href="index.html" class="logo"><img src="img/logo-blanc-framboise.svg" alt="Allyra" width="109" height="40"></a>
+    <a href="index.html" class="logo"><img src="img/logo-clair.svg" alt="Allyra" width="109" height="40"></a>
     <a href="index.html" class="back">← Retour au site</a>
   </nav>
 </header>
