@@ -70,6 +70,8 @@
   @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
   @media (prefers-reduced-motion: reduce) { .cursor svg { animation: none; } }
   @media (max-width: 640px) { .toc { columns: 1; } }
+  .btn:not(.ghost), .rdv-fab { background: var(--pink); color: #fff; }
+  .btn:not(.ghost):hover, .rdv-fab:hover { box-shadow: 5px 5px 0 var(--yellow); }
 </style>
 </head>
 <body>
