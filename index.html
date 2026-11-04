@@ -418,6 +418,87 @@
   .offer-print { background: var(--surface); border-color: var(--line); }
   .sticker circle { fill: #E8E4DF; }
   .aud:first-child .dot { background: #E8E4DF !important; }
+  @media (max-width: 600px) {
+    body { font-size: 16px; line-height: 1.6; }
+    section { padding-block: 56px; }
+    .hero { padding-block: 36px 120px; }
+    .hero .label { font-size: 11px; letter-spacing: .12em; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(32px, 9.4vw, 40px); line-height: 1.08; }
+    .hero .lead { font-size: 17px; margin-top: 18px; }
+    .hero .cta { margin-top: 26px; gap: 10px; }
+    .hero .cta .btn, .cta-strip .btn, .sub-intro .btn { width: 100%; justify-content: center; }
+    .proof { margin-top: 28px; padding-top: 18px; font-size: 14px; gap: 6px 18px; }
+    .btn { padding: 13px 22px; font-size: 15px; }
+    .head { margin-bottom: 28px; gap: 12px; }
+    .head h2, .about h2, .reviews-head h2, .faq-head h2 { font-size: 30px; }
+    .head p { font-size: 16px; }
+    .track span { font-size: 20px; }
+    .marquee { padding-block: 14px; }
+    .services, .audiences, .offers, .reviews, .work-grid { gap: 14px; }
+    .service { padding: 22px; gap: 10px; }
+    .service h3 { font-size: 24px; }
+    .service p, .aud p, .step p, .offer p, .case p { font-size: 15.5px; }
+    .service li { font-size: 13px; padding: 4px 11px; }
+    .aud { padding: 22px; }
+    .aud .dot { margin-bottom: 12px; }
+    .steps { gap: 22px; }
+    .step::before { font-size: 34px; }
+    .offer { padding: 22px 20px; }
+    .sub { margin-top: 36px; gap: 22px; }
+    .work-visual, .work-tile:first-child .work-visual { min-height: 180px; padding: 20px; }
+    .work-visual span { font-size: 28px; }
+    .work-meta { padding: 16px 18px; }
+    .figures-band { padding-block: 48px; }
+    .figure .v { font-size: 38px; }
+    .figure .l { font-size: 15px; }
+    .review { padding: 20px; gap: 10px; }
+    .review blockquote { font-size: 16px; }
+    .cta-strip { margin-top: 32px; padding: 22px 20px; border-radius: 16px; }
+    .cta-strip .actions { width: 100%; }
+    .calendly iframe { height: 620px; }
+    body > footer { padding-block: 56px 96px; }
+    .foot-grid { gap: 32px; }
+    .foot { margin-top: 40px; }
+    .rdv-fab { width: 56px; height: 56px; padding: 0; gap: 0; justify-content: center; font-size: 0; letter-spacing: 0; }
+    .rdv-fab svg { width: 24px; height: 24px; }
+  }
+  body::before, header { background: #fff; }
+  header { border-bottom: 1px solid var(--line); }
+  .links { color: var(--ink); }
+  .links a:hover { color: var(--pink-text); }
+  .burger { color: var(--ink); border-color: var(--line); }
+  .links.open { background: #fff !important; }
+  .hero { background: #fff; color: var(--text); padding-block: 88px 72px; border-bottom: 1px solid var(--line); }
+  .hero h1 { color: var(--ink); }
+  .hero h1 .y, .hero h1 .p { color: inherit; }
+  .hero .label { color: var(--pink-text); }
+  .hero .lead { color: var(--muted); }
+  .hero .btn.ghost { color: var(--ink); border-color: var(--ink); }
+  .proof { border-top-color: var(--line); color: var(--muted); }
+  .sticker, .bands, .cta-strip, .figures-band, .cursor, .aud .dot { display: none !important; }
+  .service, .service:nth-child(n) { background: #fff !important; color: var(--text) !important; border: 1px solid var(--line); border-radius: 0; }
+  .service:nth-child(n) h3 { color: var(--ink) !important; }
+  .service:nth-child(n) li { border: 1px solid var(--line) !important; color: var(--muted); }
+  .service:hover, .btn:hover { transform: none; }
+  .audiences-band, .pricing-sec, .quote { background: var(--surface); }
+  .aud, .offer, .review { border-radius: 0; }
+  .offer { border-top: 1px solid var(--line); }
+  .offer-print { background: #fff !important; border-color: var(--line) !important; }
+  .offer-print .offer-kind { color: var(--pink-text); }
+  .work-visual, .p-pink .work-visual, .p-yellow .work-visual, .p-mint .work-visual { background: var(--surface) !important; color: var(--ink) !important; }
+  .work-visual .ll { stroke: var(--pink) !important; stroke-width: 10; opacity: .5; }
+  .portrait img { box-shadow: none; border-radius: 0; }
+  .portrait figcaption { transform: none; box-shadow: none; background: #fff; border-radius: 0; left: 16px; font-size: 15px; }
+  .about h2 em { color: inherit; }
+  .commitments div { border-left-color: var(--line); }
+  .contact-card { border-radius: 0; }
+  .btn:not(.ghost):hover { box-shadow: none; opacity: .9; }
+  .work-visual span { display: none; }
+  .work-visual, .work-tile:first-child .work-visual { min-height: 160px; }
+  @media (max-width: 600px) {
+    .hero { padding-block: 32px 44px; }
+    .work-visual, .work-tile:first-child .work-visual { min-height: 120px; }
+  }
 </style>
 </head>
 <body>
@@ -426,7 +507,7 @@
 <header>
   <div class="wrap">
     <nav aria-label="Navigation principale">
-      <a href="#" class="logo"><img src="img/logo-clair.svg" alt="Allyra" width="98" height="36"></a>
+      <a href="#" class="logo"><img src="img/logo-fonce.svg" alt="Allyra" width="98" height="36"></a>
       <div class="links" id="links">
         <a href="#expertises">Services</a>
         <a href="#references">Réalisations</a>
@@ -859,7 +940,7 @@
   </div>
 </footer>
 
-<a class="rdv-fab" href="https://calendly.com/allyra-agence/appel-decouverte" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Prendre rendez-vous</a>
+<a class="rdv-fab" href="https://calendly.com/allyra-agence/appel-decouverte" target="_blank" rel="noopener" aria-label="Prendre rendez-vous"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Prendre rendez-vous</a>
 
 <script>
   const links = document.getElementById('links');
